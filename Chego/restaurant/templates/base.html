@@ -1,0 +1,39 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+	<head>
+		<link rel="shortcut icon" href="{% static 'media/favicon.ico' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="{% static 'scripts/myscript.js' %}"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=0.5">
+		<title>Chego Chinatown - Rice Bowls Born on the Streets of LA</title>
+	</head>
+	<body>
+		<header id="header">
+			<div id="menu-container">
+				<div id="logo">
+					<img src="{% static 'media/chego-logo.png' %}" alt="logo" />
+				</div>
+				<div id="menu">
+					<ul>
+						<li><a href="#" onclick="scrollToSection('#welcome-container')">Welcome</a></li>
+						<li><a href="#" onclick="scrollToSection('#foodMenu')">Menu</a></li>
+						<li><a href="#" onclick="scrollToSection('#about')">About</a></li>
+						<li><a href='#'>Delivery</a></li>
+						<li><a href='#'>Pick-Up</a></li>
+						<li><a href='#' onclick="cateringRequestOpen()">Catering</a></li>
+					</ul>
+				</div>
+				<div style="clear: both"></div>
+			</div>
+		</header>
+		<div id="main-body">
+			{% block content %}
+			{% endblock %}
+		</div>
+		<footer>
+			<p>EST 2010</p>
+		</footer>
+	</body>
+</html>

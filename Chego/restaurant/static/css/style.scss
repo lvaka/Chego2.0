@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif');
+
+$main-font-color: rgb(250,250,250);
+$main-font-family: 'Oswald', sans-serif;
+$food-title: 'Bree Serif', serif;
+$orange: rgb(255,151,19);
+$black: rgb(10,10,10);
+$blackAlpha: rgba(30,30,30, 0.3);
+$mainGray: rgb(99, 99, 99);
+$innerwidth: 900px;
+
+html, body, header, h1, h2, h3, h4, p, a, div, ul, li{
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+
+a{
+	transition: 0.3s;
+	text-decoration: none;
+}
+
+body {
+	background: $black;
+}
+
+#header {
+	position: fixed;
+	background: $orange;
+	width: 100%;
+	overflow: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+}
+
+#menu-container{
+	max-width: $innerwidth;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#logo {
+	float: left;
+
+	img {
+		height: 4rem;
+		width: auto;
+	}
+}
+
+#menu {
+	padding: 0.3rem 0 0.3rem 0;
+	clear: right;
+
+	ul {
+		list-style: none;
+	}
+
+	li {
+		padding: 0 0.5rem 0 0.5rem;
+		float: left;
+		font-size: 2rem;
+	}
+
+	a , a:visited{
+			font-size: 2rem;
+			font-weight: 600;
+			color: $main-font-color;
+			font-family: $main-font-family;
+		}
+
+	a:hover , a:active{
+			color: $blackAlpha;
+		}
+	
+}
+
+#main-body {
+	width: 100%;
+	margin-top: 2.5rem;
+}
+
+#preloader {
+	display: none;
+}
+
+#welcome-container{
+	position: static;
+	margin-top: 4rem;
+	width: 100%;
+	height: 50rem;
+	background: url("/static/media/bowls/01.jpg") no-repeat;
+	background-size: auto;
+	background-position: center;
+
+	#welcome {
+		color: $main-font-color;
+		font-family: $main-font-family;
+		display: flex;
+	    justify-content:center;
+	    align-content:center;
+	    flex-direction:column;
+		max-width: $innerwidth;
+		height: inherit;
+		margin: 0 auto 0 auto;
+		padding: 0;
+
+
+		p {
+			margin: 1rem 0 1rem 0;
+			text-align: center;
+			font-weight: 600;
+			font-size: 2.5rem;
+			line-height: 4.5rem;
+			text-shadow: 0.5rem 0.5rem 2rem $black;
+		}
+	}
+}
+
+#foodMenu-container{
+	width: 100%;
+	background: $mainGray;
+
+	#foodMenu{
+		margin: 0 auto 0 auto;
+		padding: 2rem 0 2rem 0;
+		max-width: $innerwidth;
+		display: grid;
+		grid-template-columns: auto auto;
+		grid-template-rows: auto;
+	  	justify-items: start;
+	  	grid-template-areas:
+	  		". ."
+	    	"head1 ."
+	    	"cell1 cell2"
+	    	"head2 head3"
+	    	"cell3 cell4"
+	    	"head4 ."
+	    	"cell5 cell5";
+
+		.menuHeadings {
+		  margin-top: 2rem;
+		  font-family: $main-font-family;
+		  font-weight: 600;
+		  font-size: 2rem;
+		  padding: 1rem 0;
+		  color: $orange;
+		}
+
+		h1{
+			color: $orange;
+			font-size: 3rem;
+			font-weight: 600;
+			font-family: $food-title;
+		}
+
+		p {
+			font-family: $main-font-family;
+			color: $main-font-color;
+			font-size: 1.5rem;
+			line-height: 1.7rem;
+			margin: 1.5rem 0 1.5rem 0;
+
+			em{
+				font-size: 1.2rem;
+				line-height: 1rem;
+				margin: 0;
+				font-style: normal;
+			}
+			em#title{
+				font-size: 1.7rem;
+				font-weight: 600;
+				font-family: $food-title;
+			}
+		}
+
+		#appHead{
+		  padding: 0 20px 0 0;
+		  grid-area: head1;
+		}
+
+		#appcol1{
+		  padding: 0 20px 0 0;
+		  grid-area: cell1;
+		}
+		#appcol2{
+		  padding: 0 20px 0 0;
+		  grid-area: cell2;
+		}
+
+		#grillHead{
+		  padding: 0 20px 0 0;
+		  grid-area: head2;
+		}
+		#wokHead{
+		  padding: 0 20px 0 0;
+		  grid-area: head3;
+		}
+
+		#grill{
+		  padding: 0 20px 0 0;
+		  grid-area: cell3;
+		}
+
+		#wok{
+		  padding: 0 20px 0 0;
+		  grid-area: cell4;
+		}
+
+		#sweetHead{
+		  padding: 0 20px 0 0;
+		  grid-area: head4;
+		}
+
+		#sweets{
+		  padding: 0 20px 0 0;
+		  grid-area: cell5;
+		}
+	}
+}
+
+#about-container{
+	width: 100%;
+	background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 100%), url("/static/media/storefront.jpg") no-repeat;
+	background-position: center;	
+
+
+	#about{
+		margin: 0 auto 0 auto;
+		width: $innerwidth;
+		padding: 3rem 0 5rem 0;
+
+		h1{
+			color: $orange;
+			font-size: 2rem;
+			font-weight: 600;
+			font-family: $food-title;
+		}
+
+		p {
+			font-family: $main-font-family;
+			color: $main-font-color;
+			font-size: 1.5rem;
+			line-height: 1.7rem;
+			margin: 1.5rem 0 1.5rem 0;
+		}
+
+	}
+}
+
+#form-modal{
+	display: none;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0,0,0, 0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	#inner-modal{
+		position: relative;
+		border: 6px solid $orange;
+		padding: 0 2rem 2rem 2rem;
+		margin-left: auto;
+		margin-right: auto;
+		top: 8rem;
+		max-width: $innerwidth;
+		background: $mainGray;
+
+		h1{
+			margin-top: 1rem;
+			margin-bottom: 1.5rem;
+			font-family: $food-title;
+			color: $orange;
+		}
+
+		p{
+			margin: 0.5rem 0 0.5rem 0;
+			font-family: $main-font-family;
+			color: $main-font-color;
+		}
+		td{
+			vertical-align: top;
+		}
+
+		input{
+				margin: 0.5rem;
+			}
+
+		textarea{
+				margin: 0.5rem;
+		}
+
+		#closeForm{
+			float: right;
+			position: relative;
+			top: 0;
+			color: $orange;
+			font-size: 3rem;
+			text-align: right;
+			font-weight: bold;
+		}
+
+	}
+}
+
+
+footer{
+	width: 100%;
+	background: $mainGray;
+	height: 1.2rem;
+
+	p {
+		margin-left: 1rem;
+		color: $main-font-color;
+		font-family: $food-title;
+		font-size: 1rem;
+		text-align: left;
+		line-height: 1.2rem;
+	}
+}

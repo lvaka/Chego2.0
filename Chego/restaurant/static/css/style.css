@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald");
+@import url("https://fonts.googleapis.com/css?family=Bree+Serif");
+html, body, header, h1, h2, h3, h4, p, a, div, ul, li {
+  margin: 0;
+  padding: 0;
+  display: block; }
+
+a {
+  transition: 0.3s;
+  text-decoration: none; }
+
+body {
+  background: #0a0a0a; }
+
+#header {
+  position: fixed;
+  background: #ff9713;
+  width: 100%;
+  overflow: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1; }
+
+#menu-container {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto; }
+
+#logo {
+  float: left; }
+  #logo img {
+    height: 4rem;
+    width: auto; }
+
+#menu {
+  padding: 0.3rem 0 0.3rem 0;
+  clear: right; }
+  #menu ul {
+    list-style: none; }
+  #menu li {
+    padding: 0 0.5rem 0 0.5rem;
+    float: left;
+    font-size: 2rem; }
+  #menu a, #menu a:visited {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fafafa;
+    font-family: "Oswald", sans-serif; }
+  #menu a:hover, #menu a:active {
+    color: rgba(30, 30, 30, 0.3); }
+
+#main-body {
+  width: 100%;
+  margin-top: 2.5rem; }
+
+#preloader {
+  display: none; }
+
+#welcome-container {
+  position: static;
+  margin-top: 4rem;
+  width: 100%;
+  height: 50rem;
+  background: url("/static/media/bowls/01.jpg") no-repeat;
+  background-size: auto;
+  background-position: center; }
+  #welcome-container #welcome {
+    color: #fafafa;
+    font-family: "Oswald", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    max-width: 900px;
+    height: inherit;
+    margin: 0 auto 0 auto;
+    padding: 0; }
+    #welcome-container #welcome p {
+      margin: 1rem 0 1rem 0;
+      text-align: center;
+      font-weight: 600;
+      font-size: 2.5rem;
+      line-height: 4.5rem;
+      text-shadow: 0.5rem 0.5rem 2rem #0a0a0a; }
+
+#foodMenu-container {
+  width: 100%;
+  background: #636363; }
+  #foodMenu-container #foodMenu {
+    margin: 0 auto 0 auto;
+    padding: 2rem 0 2rem 0;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    justify-items: start;
+    grid-template-areas: ". ." "head1 ." "cell1 cell2" "head2 head3" "cell3 cell4" "head4 ." "cell5 cell5"; }
+    #foodMenu-container #foodMenu .menuHeadings {
+      margin-top: 2rem;
+      font-family: "Oswald", sans-serif;
+      font-weight: 600;
+      font-size: 2rem;
+      padding: 1rem 0;
+      color: #ff9713; }
+    #foodMenu-container #foodMenu h1 {
+      color: #ff9713;
+      font-size: 3rem;
+      font-weight: 600;
+      font-family: "Bree Serif", serif; }
+    #foodMenu-container #foodMenu p {
+      font-family: "Oswald", sans-serif;
+      color: #fafafa;
+      font-size: 1.5rem;
+      line-height: 1.7rem;
+      margin: 1.5rem 0 1.5rem 0; }
+      #foodMenu-container #foodMenu p em {
+        font-size: 1.2rem;
+        line-height: 1rem;
+        margin: 0;
+        font-style: normal; }
+      #foodMenu-container #foodMenu p em#title {
+        font-size: 1.7rem;
+        font-weight: 600;
+        font-family: "Bree Serif", serif; }
+    #foodMenu-container #foodMenu #appHead {
+      padding: 0 20px 0 0;
+      grid-area: head1; }
+    #foodMenu-container #foodMenu #appcol1 {
+      padding: 0 20px 0 0;
+      grid-area: cell1; }
+    #foodMenu-container #foodMenu #appcol2 {
+      padding: 0 20px 0 0;
+      grid-area: cell2; }
+    #foodMenu-container #foodMenu #grillHead {
+      padding: 0 20px 0 0;
+      grid-area: head2; }
+    #foodMenu-container #foodMenu #wokHead {
+      padding: 0 20px 0 0;
+      grid-area: head3; }
+    #foodMenu-container #foodMenu #grill {
+      padding: 0 20px 0 0;
+      grid-area: cell3; }
+    #foodMenu-container #foodMenu #wok {
+      padding: 0 20px 0 0;
+      grid-area: cell4; }
+    #foodMenu-container #foodMenu #sweetHead {
+      padding: 0 20px 0 0;
+      grid-area: head4; }
+    #foodMenu-container #foodMenu #sweets {
+      padding: 0 20px 0 0;
+      grid-area: cell5; }
+
+#about-container {
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url("/static/media/storefront.jpg") no-repeat;
+  background-position: center; }
+  #about-container #about {
+    margin: 0 auto 0 auto;
+    width: 900px;
+    padding: 3rem 0 5rem 0; }
+    #about-container #about h1 {
+      color: #ff9713;
+      font-size: 2rem;
+      font-weight: 600;
+      font-family: "Bree Serif", serif; }
+    #about-container #about p {
+      font-family: "Oswald", sans-serif;
+      color: #fafafa;
+      font-size: 1.5rem;
+      line-height: 1.7rem;
+      margin: 1.5rem 0 1.5rem 0; }
+
+#form-modal {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0; }
+  #form-modal #inner-modal {
+    position: relative;
+    border: 6px solid #ff9713;
+    padding: 0 2rem 2rem 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    top: 8rem;
+    max-width: 900px;
+    background: #636363; }
+    #form-modal #inner-modal h1 {
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      font-family: "Bree Serif", serif;
+      color: #ff9713; }
+    #form-modal #inner-modal p {
+      margin: 0.5rem 0 0.5rem 0;
+      font-family: "Oswald", sans-serif;
+      color: #fafafa; }
+    #form-modal #inner-modal td {
+      vertical-align: top; }
+    #form-modal #inner-modal input {
+      margin: 0.5rem; }
+    #form-modal #inner-modal textarea {
+      margin: 0.5rem; }
+    #form-modal #inner-modal #closeForm {
+      float: right;
+      position: relative;
+      top: 0;
+      color: #ff9713;
+      font-size: 3rem;
+      text-align: right;
+      font-weight: bold; }
+
+footer {
+  width: 100%;
+  background: #636363;
+  height: 1.2rem; }
+  footer p {
+    margin-left: 1rem;
+    color: #fafafa;
+    font-family: "Bree Serif", serif;
+    font-size: 1rem;
+    text-align: left;
+    line-height: 1.2rem; }
+
+/*# sourceMappingURL=style.css.map */

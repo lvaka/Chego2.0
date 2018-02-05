@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'restaurant',
-    'manager_guide',
-    'manager_orderapp',
+#    'manager_guide',
+#    'manager_orderapp',
 ]
 
 MIDDLEWARE = [

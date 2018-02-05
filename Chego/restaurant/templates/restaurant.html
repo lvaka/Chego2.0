@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div id="preloader">
+	<img src="{% static 'media/bowls/01.jpg' %}" />
+	<img src="{% static 'media/bowls/02.jpg' %}" />
+	<img src="{% static 'media/bowls/03.jpg' %}" />
+	<img src="{% static 'media/bowls/04.jpg' %}" />
+	<img src="{% static 'media/bowls/05.jpg' %}" />
+	<img src="{% static 'media/bowls/06.jpg' %}" />
+	<img src="{% static 'media/bowls/07.jpg' %}" />
+	<img src="{% static 'media/bowls/08.jpg' %}" />
+	<img src="{% static 'media/bowls/09.jpg' %}" />
+	<img src="{% static 'media/bowls/10.jpg' %}" />
+	<img src="{% static 'media/bowls/11.jpg' %}" />
+	<img src="{% static 'media/bowls/12.jpg' %}" />
+	<img src="{% static 'media/bowls/13.jpg' %}" />
+	<img src="{% static 'media/bowls/14.jpg' %}" />
+	<img src="{% static 'media/bowls/15.jpg' %}" />
+</div>
+<div id="form-modal">
+	<div id="inner-modal">
+		<span id='closeForm'>&times;</span>
+		<h1>Catering Request Form</h1>
+		<p>We offer many of our dishes in catering tray form.  Each catering tray will feed approx. 8-12 guests.  Or, of course, bowls can be ordered indiviually.</p>
+		<form action="POST">
+			<table>
+				<tr>
+					<td><p><label for="clientName">Name: </label></p></td>
+					<td><input type="text" required name="clientName" size=41/></td>
+				</tr>
+				<tr>
+					<td><p><label for="clientName">e-mail: </label></p></td>
+					<td><input type="email" required name="clientName" size=41/></td>
+				</tr>
+				<tr>
+					<td><p><label for="clientName">phone: </label></p></td>
+					<td><input type="tel" required name="clientName" size=41 /></td>
+				</tr>
+				<tr>
+					<td><p><label for="date">Date Requested: </label></p></td>
+					<td><input type="text" required name="date" size=41 placeholder="eg. January 16th at 4PM" /></td>
+				</tr>
+				<tr>
+					<td><p><label for="numberOGuests">Number of Guests: </label></p></td>
+					<td><input type="text" name="numberOGuests" size=41 placeholder="eg. 12-14" /></td>
+				</tr>
+				<tr>
+					<td><p><label for="tentOrder">Tentative Order: </label></p></td>
+					<td><textarea name="tentOrder" id="id_order" rows="10" cols="40" placeholder="eg. 10 Chubby Pork Belly, 4 Hen House"></textarea></td>
+				</tr>
+				<tr>
+					<td><p><label for="id_notes">Notes:</label></p></td>
+					<td><textarea name="notes" id="id_notes" rows="5" cols="40" placeholder="eg. Do you have any suggestions for vegans and gluten free options?"></textarea></td>
+				</tr>
+			 </table>
+			<input type="submit" name="Submit" />
+		</form>
+	</div>
+</div>
+<div id="welcome-container">
+	<div id="welcome">
+		<p>Welcome to Chego in Chinatown! We produce the finest rice bowls in LA. We're ready to excite your taste buds with our unique blend of spices and flavors crafted from the various cultures that reside within our community.</p>
+		<p>We are located at 727 N. Broadway Unit 117, Los Angeles, CA 90017</p>
+		<p id="time">It is currently 8pm and we are open until 9pm tonight.</p>
+	</div>
+</div>
+<div id="foodMenu-container">
+	
+	<div id="foodMenu">
+		<h1>Menu</h1>
+		<div class=menuHeadings id="appHead">SNACKS</div>
+        <div id="appcol1">
+          <p>
+          <em id="title">$6 OOEY GOOEY FRIES</em> - beer-battered fries w/ spicy sour cream,
+          monterey jack and cheddar cheese, cotija, chilies, cilantro, braised garlic<br />
+          <em><b>$4 half order</b></em>
+          </p>
+          <p>
+          <em id="title">$4 3PM MEATBALLS</em> - Korean fried meatballs with a blend of tofu, beef and pork
+            on a polenta patty, with sesame leaf, green onion, salsa naranja and salsa azul
+          </p>
+        </div>
+        <div id="appcol2">
+          <p><em id="title">$6 CHARRED SEASONAL VEGGIES</em> - with lemon juice, fried shallots,
+              toasted sesame, chilies, parmesan, salsa verde
+              and salsa azul
+          </p>
+          <p>
+          <em id="title">$7 THE TWELVE DOLLAR SALAD</em> - baby spinach and mizuna, with
+              pickled radishes, pickled fennel, cranberries, candied pecans,
+              goat cheese and citrus miso dressing Fried Shallot
+          </p>
+        </div>
+        <div class=menuHeadings id="grillHead">FROM THE GRILL</div>
+        <div id="grill">
+          <p><em id="title">$10 CHUBBY PORK BELLY BOWL</em> - kochujang-lacquered
+              kurobuta pork belly with a thick layer of fat over rice, chef's blend of salsas, w/ fried egg, pickled
+              radishes, Chinese broccoli, cotija cheese, peanuts, fried shallots, toasted sesame
+          </p>
+          <p><em id="title">$10 TINY'S PRIME RIB RICE PLATE</em> - Rib Eye Steaks over steamed
+              rice, fried egg, Chinese broccoli, creamed horseradish,Sriracha
+              roasted garlic paste and shallots
+          </p>
+          <p><em id="title">$10 STEAK IN THE HEART SANDWICH</em> - prime rib sandwich on grilled
+              ciabatta w/ wok-seared onions, roasted garlic butter, parmesan cheese and salsa
+              verde
+          </p>
+          <p><em id="title">$10 EXHIBIT A BURGER</em> - ½ pound grass fed burger,
+              cheese, coconut mayo, pineapple, sweet chili sauce, fried shallots, wild
+              mizuna and Thai basil
+          </p>
+          <p><em id="title">$10 CHUBBY PORK BURRITO</em> - kochujang-lacquered
+              kurobuta pork belly with a thick layer of fat, cheese, rice, salsa roja and verde, grilled onions. spicy sourcream, a fried egg, sesame seeds, and shallots all wrapped in a warm flour tortilla.
+          </p>
+        </div>
+        <div class=menuHeadings id="wokHead">FROM THE WOK</div>
+        <div id="wok">
+          <p><em id="title">$10 BEEFY T</em> - hot chili fried rice, diced beef, home
+              brewed garlic soy sauce, thai basil, chili, garlic paste w/ fried egg and
+              fried shallots
+          </p>
+          <p><em id="title">$10 KUNGPAU NOODLES</em> - knife cut noodles and baby bok choy w/
+              chilies, peanuts, lemongrass, egg and Thai basil. Contains fish/oyster
+              sauce. Very Spicy<br />
+              <em><b>$4 add chicken/pork belly &nbsp;&nbsp;$6 add beef</b></em>
+          </p>
+          <p><em id="title">$10 SOUR CREAM HEN HOUSE</em> - marinated grilled chicken rice
+              bowl w/ fried egg, Chinese broccoli, sour cream sambal, Thai basil,
+              sesame, chilies, and fried shallots
+          </p>
+          <p><em id="title">$10 TOFU T</em> - hot chili fried rice, diced tofu, home brewed
+              garlic soy sauce, thai basil, chili, garlic paste w/ fried egg and fried
+              shallots
+          </p>
+          <p><em id="title">$10 KIMCHI SPAM BOWL</em> - with rice, scrambled eggs and baby bok
+              choy w/ a touch of butter and toasted sesame
+          </p>
+        </div>
+        <div class=menuHeadings id="sweetHead">SWEETS</div>
+        <div id="sweets">
+          <p><em id="title">$4 CHOCLATE TRES LECHES CAKE</em> - devil’s food cake soaked in cayenne-cinnamon-
+            infused leches w/ tapioca milk pudding and spiced peanut brittle
+          </p>
+          <p><em id="title">$4 SRIRACHA BAR</em> - chocolate crisped rice bottom,
+            caramel, Sriracha ganache, spiced candied peanuts and dark chocolate
+          </p>
+          <p><em id="title">$6 PIÑA KRACKALADA</em> - coconut sticky rice w/ candied pineapple, puffy rice krackle and sesame
+          </p>
+        </div>
+      </div>
+	<div>
+</div>
+<div id="about-container">
+	<div id="about">
+		<h1>About Us</h1>
+		<p>
+          Launched in 2010, Chego started out originally as a test kitchen for the KogiBBQ Korean taco trucks.
+          However, the kitchen had a complete wok station, oven, and deep fryer left over from the previous owners
+          of the space.  The gears began turning in the mind of Chef Roy Choi and he decided that beyond being a
+          simple test kitchen, this would become a full fledged restaurant.
+        </p>
+        <p>
+          Chef Roy Choi drew upon inspiration from his child hood when he would have to make lunch for himself with rice,
+          left overs, and an egg.  Left overs would range from Thai, Mexican, Chinese, Korean, and just about any other
+          dish that his parents would bring home.  Many times left overs would be mixed together to create different flavor
+          combinations to create variety in the young chef's meals.
+        </p>
+        <p>
+          Using this concept, Chef Roy recycled many of the sauces and marinades used for the KogiBBQ menu and repurposed them
+          into the rice bowls on the menu today.  Like Kogi, the menu of Chego draws upon influences from all accross from LA from
+          K-Town to Thai Town to China Town to the Mexican street carts dotted around the city.
+        </p>
+        <p>
+          Chego relocated to China Town LA in May of 2013 and now currently resides in the middle of the Far East Plaza at 727 N. Broadway, Los Angeles, CA 90017.
+        </p>
+	</div>
+</div>
+{% endblock %}

@@ -25,10 +25,8 @@ function openClose(){
       return "We Are Open Until 9PM";
     } else if (dateToday.getDay() > 0 && dateToday.getHours() < 21 && dateToday.getHours() >= 10){
       return "We Are Open Until 10PM";
-    } else if (dateToday.getDay() != 1){
-      return "We Are Closed, but Will Open at 11am";
     } else {
-      return "We Are Closed";
+      return "We Are Closed.  Our Hours are Tues-Saturday 11am-10pm and Sunday 11am -9pm.";
     }
   } else {
     return "We Are Closed"
@@ -62,11 +60,19 @@ function backgroundSlideShow(){
 function cateringRequestOpen(){
   scrollToSection('#welcome-container');
   $('#form-modal').fadeIn();
+  document.getElementById('form-modal').style.display = "flex";
+}
+
+function orderRequestOpen(){
+  scrollToSection('#welcome-container');
+  $('#onlineOrder-modal').fadeIn();
+  document.getElementById('onlineOrder-modal').style.display = "flex";
 }
 
 function scrollToSection(selectSection){
   $('html, body').animate({scrollTop: ($(selectSection).offset().top-65)},800, "swing");
 }
+
 
 $(document).ready(function () {
   openClose();
@@ -74,8 +80,15 @@ $(document).ready(function () {
   window.onclick = function(e) {
     if (e.target == document.getElementById('form-modal')){
       $('#form-modal').fadeOut();
+    } else if (e.target == document.getElementById('onlineOrder-modal')){
+      $('#onlineOrder-modal').fadeOut();
+    } else if (e.target == document.getElementById('cateringerror-modal')){
+      window.location.href = "/";
     }
   }
   document.getElementById('closeForm').addEventListener('click',function(){$('#form-modal').fadeOut()});
-
+  document.getElementById('closeForm2').addEventListener('click',function(){$('#onlineOrder-modal').fadeOut()});
+  $("#id_eMail").change(function () {
+      console.log( $(this).val() );
+    });
 });

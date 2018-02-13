@@ -4,6 +4,7 @@
 	<head>
 		<link rel="shortcut icon" href="{% static 'media/favicon.ico' %}" />
 		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="{% static 'scripts/myscript.js' %}"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=0.5">
@@ -13,27 +14,33 @@
 		<header id="header">
 			<div id="menu-container">
 				<div id="logo">
-					<img src="{% static 'media/chego-logo.png' %}" alt="logo" />
+					<a class="menu-button" onclick="scrollToSection('#welcome-container')"><img src="{% static 'media/chego-logo.png' %}" alt="logo" /></a>
 				</div>
 				<div id="menu">
 					<ul>
-						<li><a href="#" onclick="scrollToSection('#welcome-container')">Welcome</a></li>
-						<li><a href="#" onclick="scrollToSection('#foodMenu')">Menu</a></li>
-						<li><a href="#" onclick="scrollToSection('#about')">About</a></li>
-						<li><a href='#'>Delivery</a></li>
-						<li><a href='#'>Pick-Up</a></li>
-						<li><a href='#' onclick="cateringRequestOpen()">Catering</a></li>
+						<li><a class="menu-button" onclick="scrollToSection('#foodMenu')">Menu</a></li>
+						<li><a class="menu-button" onclick="scrollToSection('#about')">About</a></li>
+						<li><a class="menu-button" onclick="orderRequestOpen()">Order</a></li>
+						<li><a class="menu-button" onclick="cateringRequestOpen()">Catering</a></li>
 					</ul>
 				</div>
-				<div style="clear: both"></div>
 			</div>
 		</header>
+		<div id="social-box">
+			<div id="social">
+				<ul>
+					<li><a href='http://www.instagram.com/eatchego' target="new"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+					<li><a href='http://www.twitter.com/eatchego' target="new"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+				</ul>
+			</div>
+		</div>
 		<div id="main-body">
 			{% block content %}
 			{% endblock %}
 		</div>
 		<footer>
 			<p>EST 2010</p>
+			<p id="sig">Design by lvakadesigns</p>
 		</footer>
 	</body>
 </html>

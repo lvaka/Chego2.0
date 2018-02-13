@@ -5,12 +5,15 @@ html, body, header, h1, h2, h3, h4, p, a, div, ul, li {
   padding: 0;
   display: block; }
 
+.menu-button {
+  cursor: pointer; }
+
 a {
   transition: 0.3s;
   text-decoration: none; }
 
 body {
-  background: #0a0a0a; }
+  background: #1e1e1e; }
 
 #header {
   position: fixed;
@@ -24,23 +27,25 @@ body {
 
 #menu-container {
   max-width: 900px;
-  margin-left: auto;
-  margin-right: auto; }
+  margin: 0 auto;
+  display: flex; }
 
 #logo {
-  float: left; }
+  justify-self: flex-start; }
   #logo img {
     height: 4rem;
     width: auto; }
 
 #menu {
+  margin-left: auto;
   padding: 0.3rem 0 0.3rem 0;
-  clear: right; }
+  justify-self: right; }
   #menu ul {
-    list-style: none; }
+    list-style: none;
+    display: flex;
+    justify-items: flex-end; }
   #menu li {
-    padding: 0 0.5rem 0 0.5rem;
-    float: left;
+    padding: 0 0 0 4rem;
     font-size: 2rem; }
   #menu a, #menu a:visited {
     font-size: 2rem;
@@ -49,6 +54,28 @@ body {
     font-family: "Oswald", sans-serif; }
   #menu a:hover, #menu a:active {
     color: rgba(30, 30, 30, 0.3); }
+
+#social-box {
+  position: fixed;
+  width: 100%; }
+
+#social {
+  max-width: 900px;
+  font-size: 1.5rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end; }
+  #social a, #social a:visited {
+    text-align: right;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fafafa;
+    font-family: "Oswald", sans-serif; }
+  #social a:hover, #social a:active {
+    color: #ff9713; }
+  #social ul li {
+    padding: 0.2rem 0.5rem;
+    float: left; }
 
 #main-body {
   width: 100%;
@@ -61,7 +88,7 @@ body {
   position: static;
   margin-top: 4rem;
   width: 100%;
-  height: 50rem;
+  height: 96vh;
   background: url("/static/media/bowls/01.jpg") no-repeat;
   background-size: auto;
   background-position: center; }
@@ -82,14 +109,14 @@ body {
       font-weight: 600;
       font-size: 2.5rem;
       line-height: 4.5rem;
-      text-shadow: 0.5rem 0.5rem 2rem #0a0a0a; }
+      text-shadow: 0.5rem 0.5rem 2rem #1e1e1e; }
 
 #foodMenu-container {
   width: 100%;
   background: #636363; }
   #foodMenu-container #foodMenu {
     margin: 0 auto 0 auto;
-    padding: 2rem 0 2rem 0;
+    padding: 4rem 0 4rem 0;
     max-width: 900px;
     display: grid;
     grid-template-columns: auto auto;
@@ -153,11 +180,12 @@ body {
 
 #about-container {
   width: 100%;
+  height: 91vh;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url("/static/media/storefront.jpg") no-repeat;
   background-position: center; }
   #about-container #about {
     margin: 0 auto 0 auto;
-    width: 900px;
+    max-width: 900px;
     padding: 3rem 0 5rem 0; }
     #about-container #about h1 {
       color: #ff9713;
@@ -178,14 +206,14 @@ body {
   background: rgba(0, 0, 0, 0.4);
   position: fixed;
   top: 0;
-  left: 0; }
+  left: 0;
+  justify-content: center;
+  align-content: center; }
   #form-modal #inner-modal {
     position: relative;
     border: 6px solid #ff9713;
     padding: 0 2rem 2rem 2rem;
-    margin-left: auto;
-    margin-right: auto;
-    top: 8rem;
+    margin: auto;
     max-width: 900px;
     background: #636363; }
     #form-modal #inner-modal h1 {
@@ -212,16 +240,173 @@ body {
       text-align: right;
       font-weight: bold; }
 
+#cateringerror-modal {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-content: center; }
+  #cateringerror-modal #cateringerror {
+    position: relative;
+    border: 6px solid #ff9713;
+    padding: 0 2rem 2rem 2rem;
+    margin: auto;
+    max-width: 500px;
+    max-height: 250px;
+    background: #636363; }
+    #cateringerror-modal #cateringerror h1 {
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      font-family: "Bree Serif", serif;
+      color: #ff9713;
+      text-align: center; }
+    #cateringerror-modal #cateringerror h2 {
+      font-family: "Oswald", sans-serif;
+      color: #fafafa;
+      text-align: center; }
+    #cateringerror-modal #cateringerror p {
+      margin: 0.5rem 0 0.5rem 0;
+      font-family: "Oswald", sans-serif;
+      color: #fafafa; }
+
+#onlineOrder-modal {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-content: center; }
+  #onlineOrder-modal #onlineOrder {
+    position: relative;
+    border: 6px solid #ff9713;
+    padding: 0 2rem 2rem 2rem;
+    margin: auto;
+    max-width: 500px;
+    max-height: 250px;
+    background: #636363; }
+    #onlineOrder-modal #onlineOrder h1 {
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      font-family: "Bree Serif", serif;
+      color: #ff9713;
+      text-align: center; }
+    #onlineOrder-modal #onlineOrder h2 {
+      font-family: "Oswald", sans-serif;
+      color: #fafafa;
+      text-align: center; }
+    #onlineOrder-modal #onlineOrder #orderoptions {
+      display: flex;
+      flex-direction: row;
+      justify-content: center; }
+    #onlineOrder-modal #onlineOrder .orderbutton {
+      cursor: pointer;
+      margin: 0 2rem;
+      background: #ff9713;
+      border: 2px solid #1e1e1e;
+      padding: 1rem 2rem; }
+    #onlineOrder-modal #onlineOrder p {
+      margin: 0.5rem 0 0.5rem 0;
+      font-family: "Oswald", sans-serif;
+      color: #fafafa; }
+    #onlineOrder-modal #onlineOrder #closeForm2 {
+      float: right;
+      position: relative;
+      top: 0;
+      color: #ff9713;
+      font-size: 3rem;
+      text-align: right;
+      font-weight: bold; }
+
 footer {
   width: 100%;
   background: #636363;
-  height: 1.2rem; }
+  height: 2rem;
+  display: flex; }
   footer p {
     margin-left: 1rem;
     color: #fafafa;
     font-family: "Bree Serif", serif;
-    font-size: 1rem;
+    font-size: 2rem;
     text-align: left;
-    line-height: 1.2rem; }
+    line-height: 2rem; }
+  footer #sig {
+    margin-left: auto;
+    margin-right: 1rem; }
+
+@media only screen and (orientation: portrait) {
+  #welcome-container {
+    background-size: auto 100%;
+    background-position: 65%; } }
+@media only screen and (max-device-width: 900px) {
+  #menu-container {
+    width: 98%; }
+
+  #logo img {
+    height: 4rem;
+    width: auto; }
+
+  #menu a {
+    font-size: 3rem;
+    line-height: 4rem; }
+  #menu li {
+    padding: 0 0 0 1rem;
+    font-size: 2rem; }
+
+  #social {
+    width: 98%;
+    font-size: 2rem; }
+    #social a {
+      text-align: right;
+      font-size: 3rem; }
+
+  #welcome {
+    width: 98%; }
+
+  #foodMenu-container #foodMenu {
+    width: 98%;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    justify-items: start;
+    grid-template-areas: "." "head1" "cell1" "cell2" "head2" "cell3" "head3"		    	 "cell4" "head4" "cell5" "cell5"; }
+
+  #about-container {
+    height: initial;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url("/static/media/storefront.jpg") no-repeat;
+    background-position: center; }
+    #about-container #about {
+      width: 98%; }
+      #about-container #about h1 {
+        color: #ff9713;
+        font-size: 2rem;
+        font-weight: 600;
+        font-family: "Bree Serif", serif; }
+      #about-container #about p {
+        font-family: "Oswald", sans-serif;
+        color: #fafafa;
+        font-size: 1.5rem;
+        line-height: 1.7rem;
+        margin: 1.5rem 0 1.5rem 0; }
+
+  #form-modal #inner-modal {
+    width: 85%; }
+    #form-modal #inner-modal h1 {
+      font-size: 2rem; }
+    #form-modal #inner-modal p {
+      font-size: 1.5rem; }
+    #form-modal #inner-modal td {
+      vertical-align: top; }
+    #form-modal #inner-modal input {
+      margin: 1.2rem 0.5rem; }
+    #form-modal #inner-modal textarea {
+      margin: 1.2rem 0.5rem; }
+    #form-modal #inner-modal #closeForm {
+      font-size: 3rem; } }
 
 /*# sourceMappingURL=style.css.map */

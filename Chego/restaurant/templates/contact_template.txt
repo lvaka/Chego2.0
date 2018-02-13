@@ -1,0 +1,14 @@
+Contact Name:
+{{ client_name }}
+
+Email:
+{{ contact_email }}
+
+Phone:
+{{ contact_phone }}
+
+Tentative Catering Date:
+{{ date }}
+
+Notes:
+{{ notes|safe|striptags }}

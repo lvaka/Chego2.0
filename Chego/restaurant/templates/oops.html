@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<div id="welcome-container">
+	<div id="welcome">
+		<p>Welcome to Chego in Chinatown! We produce the finest rice bowls in LA. We're ready to excite your taste buds with our unique blend of spices and flavors crafted from the various cultures that reside within our community.</p>
+		<p>We are located at 727 N. Broadway Unit 117, Los Angeles, CA 90017</p>
+		<p id="time">It is currently 8pm and we are open until 9pm tonight.</p>
+	</div>
+</div>
+
+<div id='cateringerror-modal'>
+	<div id='cateringerror'>
+		<h1>OOPS</h1>
+		<h2>There was an issue with your catering request.  Please 
+		double check your email.</h2>
+		<a href="/">
+			<h2>Click Here to Return</h2>
+		</a>
+	</div>
+</div>
+{% endblock %}

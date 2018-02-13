@@ -8,8 +8,5 @@ from . import views
 
 urlpatterns = [
 	url(r'^$', views.restaurant, name='main'),
+	url(r'^oops/$', views.invalid_form, name='error'),
 ]
-"""
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-    """

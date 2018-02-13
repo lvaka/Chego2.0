@@ -22,44 +22,58 @@
 </div>
 <div id="form-modal">
 	<div id="inner-modal">
-		<span id='closeForm'>&times;</span>
+		<span id='closeForm' class="menu-button">&times;</span>
 		<h1>Catering Request Form</h1>
 		<p>We offer many of our dishes in catering tray form.  Each catering tray will feed approx. 8-12 guests.  Or, of course, bowls can be ordered indiviually.</p>
-		<form action="POST">
+		<form role="form" action="" method="post">
+			{% csrf_token %}
 			<table>
 				<tr>
-					<td><p><label for="clientName">Name: </label></p></td>
-					<td><input type="text" required name="clientName" size=41/></td>
+					<td><p>{{ form.clientName.label_tag }}</p></td>
+					<td>{{ form.clientName }}</td>
 				</tr>
 				<tr>
-					<td><p><label for="clientName">e-mail: </label></p></td>
-					<td><input type="email" required name="clientName" size=41/></td>
+					<td><p>{{ form.eMail.label_tag }}</p></td>
+					<td>{{ form.eMail }}</td>
 				</tr>
 				<tr>
-					<td><p><label for="clientName">phone: </label></p></td>
-					<td><input type="tel" required name="clientName" size=41 /></td>
+					<td><p>{{ form.phone.label_tag }}</p></td>
+					<td>{{ form.phone }}</td>
 				</tr>
 				<tr>
-					<td><p><label for="date">Date Requested: </label></p></td>
-					<td><input type="text" required name="date" size=41 placeholder="eg. January 16th at 4PM" /></td>
+					<td><p>{{ form.date.label_tag }}</p></td>
+					<td>{{ form.date }}</td>
 				</tr>
 				<tr>
-					<td><p><label for="numberOGuests">Number of Guests: </label></p></td>
-					<td><input type="text" name="numberOGuests" size=41 placeholder="eg. 12-14" /></td>
+					<td><p>{{ form.notes.label_tag }}</p></td>
+					<td>{{ form.notes }}</td>
 				</tr>
-				<tr>
-					<td><p><label for="tentOrder">Tentative Order: </label></p></td>
-					<td><textarea name="tentOrder" id="id_order" rows="10" cols="40" placeholder="eg. 10 Chubby Pork Belly, 4 Hen House"></textarea></td>
-				</tr>
-				<tr>
-					<td><p><label for="id_notes">Notes:</label></p></td>
-					<td><textarea name="notes" id="id_notes" rows="5" cols="40" placeholder="eg. Do you have any suggestions for vegans and gluten free options?"></textarea></td>
-				</tr>
-			 </table>
-			<input type="submit" name="Submit" />
+			</table>
+			<button type="submit">Submit</button>
 		</form>
 	</div>
 </div>
+
+<div id='onlineOrder-modal'>
+	<div id='onlineOrder'>
+		<span id='closeForm2' class="menu-button">&times;</span>
+		<h1>Order Online</h1>
+		<div id="orderoptions">
+			<a href="https://togoorder.com/web/1245#/" class='orderbutton'>
+				<h2>Pick Up</h2>
+			</a>
+			<a href="https://www.trycaviar.com/la/chego-2834" class='orderbutton'>
+				<h2>Delivery</h2>
+			</a>
+		</div>
+		<br />
+		<a href="tel:+13233808680">
+			<h2>Or Order Over The Phone <br />323-380-8680</h2>
+		</a>
+		<p>For Order larger than $100, please call in or order through catering.</p>
+	</div>
+</div>
+
 <div id="welcome-container">
 	<div id="welcome">
 		<p>Welcome to Chego in Chinatown! We produce the finest rice bowls in LA. We're ready to excite your taste buds with our unique blend of spices and flavors crafted from the various cultures that reside within our community.</p>

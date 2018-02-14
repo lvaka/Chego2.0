@@ -26,7 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', 'chego.lvakadesigns.com', 'lvakadesigns.com']
 
 
 # Application definition
@@ -77,12 +77,25 @@ WSGI_APPLICATION = 'Chego.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+if (DEBUG):
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
     }
-}
+
+else:
+    DATABASES = {
+        'default': {
+        'ENGINE': config('DHOST_ENGINE'),
+        'NAME': config('DHOST_NAME'),
+        'USER': config('DHOST_USER'),
+        'PASSWORD': config('DHOST_PASSWORD'),
+        'HOST': config('DHOST_HOST'),
+        'PORT': config('DHOST_PORT'),
+        }
+    }
 
 
 # Password validation

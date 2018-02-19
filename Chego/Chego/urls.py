@@ -20,6 +20,6 @@ from django.contrib.auth import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('restaurant.urls')),
-#    url(r'^manager/', include('manager_guide.urls')),
+    url(r'', include('manager_guide.urls')),
 #    url(r'^order_guide/', include('manager_orderapp.urls')),
 ]

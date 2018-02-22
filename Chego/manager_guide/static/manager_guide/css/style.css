@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+html, body, header, h1, h2, h3, h4, p, a, div, ul, li {
+  margin: 0;
+  padding: 0;
+  display: block; }
+
+body {
+  background: #BAE5FF; }
+
+a {
+  color: #2A3D49;
+  text-decoration: none;
+  transition: 0.4s; }
+
+a:hover {
+  background: #AB5588;
+  color: #BAE5FF;
+  text-decoration: underline; }
+
+#login_container {
+  display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  justify-content: center; }
+
+#login_box {
+  font-family: "Source Sans Pro", sans-serif;
+  background: #81C0E6;
+  align-self: center;
+  padding: 2rem;
+  box-shadow: 4px 4px 10px #2A3D49; }
+
+#logout_box {
+  font-family: "Source Sans Pro", sans-serif;
+  padding: 0.2rem 1rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  text-align: right;
+  z-index: 2; }
+
+#navigation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #81C0E6;
+  z-index: 0; }
+  #navigation ul {
+    padding: 1rem; }
+  #navigation li {
+    float: left;
+    font-family: "Source Sans Pro", sans-serif;
+    color: #2A3D49;
+    padding: 0 1rem 1rem 0; }
+    #navigation li a {
+      font-weight: bold;
+      font-size: 1.4rem; }
+
+#welcome_box {
+  display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  z-index: -1; }
+  #welcome_box #welcome_tag {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    align-self: center; }
+  #welcome_box h1 {
+    font-family: "Source Sans Pro", sans-serif; }
+
+/*# sourceMappingURL=style.css.map */

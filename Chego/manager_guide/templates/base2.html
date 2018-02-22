@@ -1,0 +1,41 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+	<head>
+		<link rel="shortcut icon" href="{% static 'media/favicon.ico' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'manager_guide/css/style.css' %}"/>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="{% static 'manager_guide/scripts/manager.js' %}"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=0.5">
+		<title>Chego Chinatown Manager Guide</title>
+	</head>
+	<body>
+		{% if user.is_authenticated %}
+		<div id="logout_box">
+			<p>You are logged in</p>
+			<a href="{% url 'logout' %}"><p>Log Out</p></a>
+		</div>
+
+		<nav id="navigation">
+			<ul>
+				<li>
+					<a href="">Recipes</a>
+				</li>
+				<li>
+					<a href="">Menu Items</a>
+				</li>
+				<li>
+					<a href="">Contacts</a>
+				</li>
+				<li>
+					<a href="">Make Orders</a>
+				</li>
+			</ul>
+		</nav>
+		{% endif %}
+
+		{% block content %}
+		{% endblock %}
+	</body>
+</html>

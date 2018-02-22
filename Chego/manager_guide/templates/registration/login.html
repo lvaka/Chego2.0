@@ -1,0 +1,23 @@
+{% extends 'base2.html' %}
+
+{% block content %}
+<div id="login_container">
+	<div id="login_box">
+		<form method="post" action="{% url 'login' %}">
+			{% csrf_token %}
+				<table>
+				<tr>
+					<td><p>{{ form.username.label_tag }}</p></td>
+					<td>{{ form.username }}</td>
+				</tr>
+				<tr>
+					<td><p>{{ form.password.label_tag }}</p></td>
+					<td>{{ form.password }}</td>
+				</tr>
+				</table>
+				<input type="submit" value="login" />
+				<input type="hidden" name="next" value="{{ next }}" />
+		</form>
+	</div>
+</div>
+{% endblock %}

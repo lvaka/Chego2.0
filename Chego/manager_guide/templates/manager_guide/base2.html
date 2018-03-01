@@ -11,9 +11,21 @@
 		<title>Chego Chinatown Manager Guide</title>
 	</head>
 	<body>
-		<div id="login_container">
+		{% if user.is_authenticated %}
+			<div id="navigation">
+				<ul>
+					<li><a href="{% url 'recipes' %}">Recipes</a></li>
+					<li><a href="{% url 'menu_items' %}">Menu Items</a></li>
+					<li><a href="{% url 'contacts' %}">Contacts</a></li>
+					<li><a href="">Place Orders</a></li>
+				</ul>
+			</div>
+			<div id="logout_box">
+				<p>You are logged in</p>
+				<a href="{% url 'logout' %}"><p>Log Out</p></a>
+			</div>
+		{% endif %}
 		{% block content %}
 		{% endblock %}
-		</div>
 	</body>
 </html>

@@ -1,0 +1,28 @@
+{% extends 'manager_guide/base2.html' %}
+
+{% block content %}
+	
+	<div id="content_box">
+		<div id="menu_tag">
+			<h1>Recipes</h1>
+			<div class="menu_items">
+				{% for recipe in recipes %}
+				<h2>{{ recipe.name }}</h2>
+				<table>
+					<tr>
+						<td><p><em>Ingredients:</em></p></td>
+						<td><p>{{ recipe.ingredients|linebreaksbr }}</p></td>
+					</tr>
+					<tr>
+						<td><p><em>Directions:</em></p></td>
+						<td><p>{{ recipe.directions|linebreaksbr }}</p></td>
+					</tr>
+				</table>
+				<center><hr /></center>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}

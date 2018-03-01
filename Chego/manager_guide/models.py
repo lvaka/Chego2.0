@@ -10,8 +10,21 @@ class MenuItem(models.Model):
 	components = models.TextField()
 	assembly = models.TextField()
 
-	def publish(self):
-		self.save
+	def __str__(self):
+		return self.name
+
+class Contact(models.Model):
+	name = models.CharField(max_length=100)
+	department = models.CharField(max_length=100)
+	four11 = models.TextField()
+
+	def __str__(self):
+		return self.name
+
+class Recipe(models.Model):
+	name = models.CharField(max_length=100)
+	ingredients = models.TextField()
+	directions = models.TextField()
 
 	def __str__(self):
 		return self.name

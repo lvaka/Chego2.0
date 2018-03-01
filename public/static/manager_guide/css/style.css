@@ -1,20 +1,29 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
-html, body, header, h1, h2, h3, h4, p, a, div, ul, li {
+html, body, header, h1, h2, h3, h4, p, a, div, ul, li, table, td, tr {
   margin: 0;
   padding: 0;
   display: block; }
+
+table td {
+  display: table-cell;
+  vertical-align: top; }
 
 body {
   background: #BAE5FF; }
 
 a {
   color: #2A3D49;
-  text-decoration: none; }
+  text-decoration: none;
+  transition: 0.4s; }
 
 a:hover {
   background: #AB5588;
   color: #BAE5FF;
   text-decoration: underline; }
+
+h1 {
+  font-family: "Source Sans Pro", sans-serif;
+  color: #2A3D49; }
 
 #login_container {
   display: flex;
@@ -34,10 +43,61 @@ a:hover {
 
 #logout_box {
   font-family: "Source Sans Pro", sans-serif;
-  background: #81C0E6;
   padding: 0.2rem 1rem;
-  position: fixed;
+  position: absolute;
   top: 0;
-  right: 0; }
+  right: 0;
+  text-align: right;
+  z-index: 2; }
+
+#navigation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #81C0E6;
+  z-index: 0; }
+  #navigation ul {
+    padding: 1rem; }
+  #navigation li {
+    float: left;
+    font-family: "Source Sans Pro", sans-serif;
+    color: #2A3D49;
+    padding: 0 1rem 1rem 0; }
+    #navigation li a {
+      font-weight: bold;
+      font-size: 1.4rem; }
+
+#content_box {
+  display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  z-index: -1; }
+  #content_box #content_tag {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    align-self: center;
+    color: #2A3D49;
+    z-index: 3; }
+  #content_box #menu_tag {
+    width: 60%;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+    text-align: left;
+    align-self: flex-start;
+    justify-self: flex-start; }
+    #content_box #menu_tag em {
+      font-weight: 600;
+      font-decoration: none;
+      font-size: 1.2rem;
+      margin-right: 0.5rem; }
+  #content_box h1, #content_box h2, #content_box p {
+    font-family: "Source Sans Pro", sans-serif;
+    margin: 1rem 0; }
 
 /*# sourceMappingURL=style.css.map */

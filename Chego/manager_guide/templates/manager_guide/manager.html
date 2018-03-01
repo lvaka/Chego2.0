@@ -1,11 +1,20 @@
-{% extends 'base2.html' %}
+{% extends 'manager_guide/base2.html' %}
 
 {% block content %}
-<div id="login_box">
-	<form>
-		<p>Login</p> <input />
-		<p>Password</p> <input />
-		<button>Submit</button>
-	</form>
-</div>
+
+
+{% if user.is_authenticated %}
+	<div id="content_box">
+		<div id="content_tag">
+			<h1>Welcome to the manager guide.  Here are all the tools you will need to succeed.</h1>
+		</div>
+	</div>
+{% else %}
+	<div id="login_container">
+		<div id="login_box">
+			<a href="{% url 'login' %}"><h1>Please Log In</h1></a>
+		</div>
+	</div>	
+{% endif %}
+
 {% endblock %}

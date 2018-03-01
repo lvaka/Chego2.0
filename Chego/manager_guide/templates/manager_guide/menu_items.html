@@ -1,0 +1,46 @@
+{% extends 'manager_guide/base2.html' %}
+
+{% block content %}
+	
+	<div id="content_box">
+		<div id="menu_tag">
+			<h1>Snacks</h1>
+			{% for snack in snacks %}
+			<div class="menu_items">
+				<h2>{{ snack.name }}</h2>
+				<p><em>Components:</em> {{ snack.components }}</p>
+				<p><em>Assembly:</em> {{ snack.assembly }}</p>
+			</div>
+			{% endfor %}
+			<center><hr /></center>
+			<h1>Grill Items</h1>
+			{% for grill in grills %}
+			<div class="menu_items">
+				<h2>{{ grill.name }}</h2>
+				<p><em>Components:</em> {{ grill.components }}</p>
+				<p><em>Assembly:</em> {{ grill.assembly }}</p>
+			</div>
+			{% endfor %}
+			<center><hr /></center>
+			<h1>Wok Items</h1>
+			{% for wok in woks %}
+			<div class="menu_items">
+				<h2>{{ wok.name }}</h2>
+				<p><em>Components:</em> {{ wok.components }}</p>
+				<p><em>Assembly:</em> {{ wok.assembly }}</p>
+			</div>
+			{% endfor %}
+			<center><hr /></center>
+			<h1>Sweets</h1>
+			{% for sweet in sweets %}
+			<div class="menu_items">
+				<h2>{{ sweet.name }}</h2>
+				<p><em>Components:</em> {{ sweet.components }}</p>
+				<p><em>Assembly:</em> {{ sweet.assembly }}</p>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+
+
+{% endblock %}

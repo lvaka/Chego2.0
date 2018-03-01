@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+$main-color: #81C0E6;
+$main-color-dark: #2A3D49;
+$main-color-light: #BAE5FF;
+$main-color-white: #F3FAFF;
+$highlight: #AB5588;
+$main-font: 'Source Sans Pro', sans-serif;
+
+html, body, header, h1, h2, h3, h4, p, a, div, ul, li, table, td, tr{
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+
+table td { 
+  display: table-cell;
+  vertical-align: top; 
+}
+
+hr {
+	margin: 2rem 0;
+	display: block;
+	border-color: $main-color;
+	border-width: 2px 0 0 0;
+	border-style: dashed;
+}
+
+body {
+	background: $main-color-light;
+}
+
+a {
+	color: $main-color-dark;
+	text-decoration: none;
+	transition: 0.4s;
+}
+
+a:hover{
+	background: $highlight;
+	color: $main-color-light;
+	text-decoration: underline;
+}
+
+h1 {
+	font-family: $main-font;
+	color: $main-color-dark;
+}
+
+
+
+#login_container{
+	display: flex;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	justify-content: center;
+}
+
+#login_box{
+	font-family: $main-font;
+	background: $main-color;
+	align-self: center;
+	padding: 2rem;
+	box-shadow: 4px 4px 10px $main-color-dark;
+}
+
+#logout_box{
+	font-family: $main-font;
+	padding: 0.2rem 1rem;
+	position: absolute;
+	top: 0;
+	right: 0;
+	text-align: right;
+	z-index: 2;
+}
+
+#navigation{
+	position: absolute;
+	top:0;
+	left:0;
+	right: 0;
+	background: $main-color;
+	z-index: 0;
+
+	ul{
+		padding: 1rem;
+	}
+
+	li {
+		float: left;
+		font-family: $main-font;
+		color: $main-color-dark;
+		padding: 0 1rem 1rem 0;
+
+		a{
+			font-weight: bold;
+			font-size: 1.4rem;
+		}
+	}
+}
+
+#content_box{
+	display: flex;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	justify-content: center;
+	z-index: -1;
+
+	#content_tag{
+		width: 60%;
+		margin: auto;
+		text-align: center;
+		align-self: center;
+		color: $main-color-dark;
+		z-index: 3;
+	}
+
+	#menu_tag{
+		width: 60%;
+		margin-top: 10vh;
+		margin-bottom: 5vh;
+		text-align: left;
+		align-self: flex-start;
+		justify-self: flex-start;
+
+		em{
+			font-weight: 600;
+			font-decoration: none;
+			font-size: 1.2rem;
+			margin-right: 0.5rem;
+		}
+	}
+
+	h1, h2, p{
+		font-family: $main-font;
+	}
+
+	h1, p{
+		margin: 1rem 0;
+	}
+
+	h2 {
+		margin: 2rem 0 0 0;
+	}
+}

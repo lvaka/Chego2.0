@@ -8,5 +8,7 @@ from . import views
 
 urlpatterns = [
 	url(r'^manager$', views.manager_guide, name='manager'),
-
+	url(r'^menu_items$', views.menu_items, name='menu_items'),
+	url(r'^contacts$', views.contacts, name='contacts'),
+	url(r'^recipes$', views.recipes, name='recipes'),
 ]

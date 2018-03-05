@@ -8,6 +8,13 @@ table td {
   display: table-cell;
   vertical-align: top; }
 
+hr {
+  margin: 2rem 0;
+  display: block;
+  border-color: #81C0E6;
+  border-width: 2px 0 0 0;
+  border-style: dashed; }
+
 body {
   background: #BAE5FF; }
 
@@ -96,8 +103,18 @@ h1 {
       font-decoration: none;
       font-size: 1.2rem;
       margin-right: 0.5rem; }
-  #content_box h1, #content_box h2, #content_box p {
-    font-family: "Source Sans Pro", sans-serif;
+    #content_box #menu_tag .order_box {
+      border: 1px solid #2A3D49;
+      padding: 1rem;
+      margin: 1rem; }
+      #content_box #menu_tag .order_box a:hover {
+        background: none;
+        color: #81C0E6; }
+  #content_box h1, #content_box h2, #content_box h3, #content_box p {
+    font-family: "Source Sans Pro", sans-serif; }
+  #content_box h1, #content_box p {
     margin: 1rem 0; }
+  #content_box h2 {
+    margin: 2rem 0 0 0; }
 
 /*# sourceMappingURL=style.css.map */

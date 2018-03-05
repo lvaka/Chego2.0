@@ -30,6 +30,11 @@ body {
 	background: $black;
 }
 
+style {
+	margin: 1rem 0 0 1rem;
+	border: 1px solid black;
+}
+
 #header {
 	position: fixed;
 	background: $orange;
@@ -324,6 +329,7 @@ body {
 			font-family: $main-font-family;
 			color: $main-font-color;
 		}
+
 		td{
 			vertical-align: top;
 		}

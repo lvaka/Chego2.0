@@ -227,10 +227,16 @@ body {
       color: #fafafa; }
     #form-modal #inner-modal td {
       vertical-align: top; }
+    #form-modal #inner-modal select {
+      margin: 0.5rem;
+      height: 1.5rem;
+      font-family: "Oswald", sans-serif; }
     #form-modal #inner-modal input {
-      margin: 0.5rem; }
+      margin: 0.5rem;
+      font-family: "Oswald", sans-serif; }
     #form-modal #inner-modal textarea {
-      margin: 0.5rem; }
+      margin: 0.5rem;
+      font-family: "Oswald", sans-serif; }
     #form-modal #inner-modal #closeForm {
       float: right;
       position: relative;

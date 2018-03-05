@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
-from .models import MenuItem, Contact, Recipe
+from manager_guide.models import *
 
 # Create your views here.
 
@@ -39,3 +39,11 @@ def recipes(request):
 	recipes = Recipe.objects.order_by('name')
 
 	return render(request, 'manager_guide/recipes.html', {'recipes': recipes})
+
+@login_required
+def order_selection(request):
+
+	purveyors = Purveyor.objects.order_by('name')
+
+	return render(request, 'manager_guide/order_selection.html',
+												{'purveyors': purveyors})

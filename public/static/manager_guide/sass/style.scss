@@ -16,6 +16,15 @@ html, body, header, h1, h2, h3, h4, p, a, div, ul, li, table, td, tr{
 table td { 
   display: table-cell;
   vertical-align: top; 
+
+}
+
+hr {
+	margin: 2rem 0;
+	display: block;
+	border-color: $main-color;
+	border-width: 2px 0 0 0;
+	border-style: dashed;
 }
 
 body {
@@ -127,10 +136,28 @@ h1 {
 			font-size: 1.2rem;
 			margin-right: 0.5rem;
 		}
+
+		.order_box{
+			border: 1px solid $main-color-dark;
+			padding: 1rem;
+			margin: 1rem;
+
+			a:hover{
+				background: none;
+				color: $main-color;
+			}
+		}
 	}
 
-	h1, h2, p{
+	h1, h2,h3, p{
 		font-family: $main-font;
+	}
+
+	h1, p{
 		margin: 1rem 0;
+	}
+
+	h2 {
+		margin: 2rem 0 0 0;
 	}
 }

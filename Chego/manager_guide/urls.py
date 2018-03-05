@@ -11,4 +11,5 @@ urlpatterns = [
 	url(r'^menu_items$', views.menu_items, name='menu_items'),
 	url(r'^contacts$', views.contacts, name='contacts'),
 	url(r'^recipes$', views.recipes, name='recipes'),
+	url(r'^order_selection$', views.order_selection, name='order_selection'),
 ]

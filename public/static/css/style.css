@@ -15,6 +15,10 @@ a {
 body {
   background: #1e1e1e; }
 
+style {
+  margin: 1rem 0 0 1rem;
+  border: 1px solid black; }
+
 #header {
   position: fixed;
   background: #ff9713;

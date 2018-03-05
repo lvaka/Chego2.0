@@ -1,0 +1,17 @@
+{% extends 'manager_guide/base2.html' %}
+
+{% block content %}
+<div id="content_box">
+	<div id="menu_tag">
+		{% for purveyor in purveyors %}
+		<div class="order_box">
+			<h1>{{ purveyor.name }}</h1>
+			<p><em>Order E-Mail:</em>{{ purveyor.email }} </p>
+			<p><em>Contact Name:</em>{{ purveyor.contact }} </p>
+			<p><em>Contact Number:</em>{{ purveyor.contact_number }} </p>
+			<h3><a href="{% url 'manager' %}/{{ purveyor.name }}">Place Order</a></h3>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}

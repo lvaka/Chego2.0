@@ -30,6 +30,7 @@ body {
 	background: $black;
 }
 
+
 #header {
 	position: fixed;
 	background: $orange;
@@ -324,16 +325,25 @@ body {
 			font-family: $main-font-family;
 			color: $main-font-color;
 		}
+
 		td{
 			vertical-align: top;
 		}
 
+		select {
+			margin: 0.5rem;
+			height: 1.5rem;
+			font-family: $main-font-family;
+		}
+
 		input{
-				margin: 0.5rem;
-			}
+			margin: 0.5rem;
+			font-family: $main-font-family;
+		}
 
 		textarea{
-				margin: 0.5rem;
+			margin: 0.5rem;
+			font-family: $main-font-family;
 		}
 
 		#closeForm{

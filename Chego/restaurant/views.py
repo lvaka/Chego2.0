@@ -39,7 +39,7 @@ def restaurant(request):
 			content = template.render(context)
                         
 			email = EmailMessage(
-				"New Catering Request",
+				"New Catering Request for " + date,
 				content,
 				'noreply@kogibbq.com',
 				['eric@kogibbq.com', contact_email],

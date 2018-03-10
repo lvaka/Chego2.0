@@ -1,0 +1,28 @@
+{% extends 'manager_guide/base2.html' %}
+
+{% block content %}
+<div id="content_box">
+	<div id="menu_tag">
+		<table>
+			<tr>
+				<td><h1>{{ purveyor }}</h1></td>
+			</tr>
+			<tr>
+				<td><p>Item Name</p></td>
+				<td><p>Unit</p></td>
+				<td><p>Pars</p></td>
+				<td><p>Order Count</p></td>
+			</tr>
+			{% for order in orders %}
+			<tr>
+				<td><p>{{ order.item_name }}</p></td>
+				<td><p>{{ order.unit }}</p></td>
+				<td><p>{{ order.pars }}</p></td>
+				<td></td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+</div>
+
+{% endblock %}

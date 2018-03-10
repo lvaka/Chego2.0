@@ -47,3 +47,19 @@ def order_selection(request):
 
 	return render(request, 'manager_guide/order_selection.html',
 												{'purveyors': purveyors})
+
+@login_required
+def order(request, name):
+
+
+	orders = OrderList.objects.filter(purveyor=name)
+	order = ()
+
+	for i in orders:
+		orderstring = str(i.item_name) + " (" + str(i.unit) + ") pars(" + str(i.pars) + ")"
+		order += orderstring,
+
+	print (order)
+
+	return render (request, 'manager_guide/order.html', 
+								{'orders': orders, 'purveyor': name})

@@ -26,17 +26,17 @@ function openClose(){
     } else if (dateToday.getDay() > 0 && dateToday.getHours() < 21 && dateToday.getHours() >= 10){
       return "We Are Open Until 10PM";
     } else {
-      return "We Are Closed.  Our Hours are Tues-Saturday 11am-10pm and Sunday 11am -9pm.";
+      return "We Are Closed.  <br />Our Hours are Tues-Saturday 11am-10pm and Sunday 11am -9pm.";
     }
   } else {
-    return "We Are Closed"
+    return "We Are Closed. <br />Our Hours are Tues-Saturday 11am-10pm and Sunday 11am -9pm."
   }
   }
 
   var dateToday = new Date();
   var bannerString = "Today is " + dateToday.toDateString() + " - " + openHours();
   var banner = document.getElementById('time');
-  banner.textContent = bannerString;;
+  banner.innerHTML = bannerString;;
 }
 
 function backgroundSlideShow(){
@@ -48,7 +48,7 @@ function backgroundSlideShow(){
   var x=0;
 
   setInterval(function(){
-    bkg.backgroundImage = "url('/static/media/bowls/" + list[x] + "')";
+    bkg.backgroundImage = "linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 100%), url('/static/media/bowls/" + list[x] + "')";
     x++;
     if (x >= list.length){
       x = 0;

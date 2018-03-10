@@ -52,12 +52,11 @@ class OrderList(models.Model):
 
 class Order(models.Model):
 	purveyor = models.CharField(choices=name_choices, max_length=100)
-	item_name = models.CharField(max_length=100)
-	quantity = models.PositiveSmallIntegerField()
 	order_date = models.DateField(auto_now=True)
-	ordernumber = models.PositiveIntegerField()
 	delivery_date = models.CharField(choices=get_date_choices(7),max_length=100)
+	complete_order = models.TextField()
+	email_sent = models.BooleanField(default=False)
 
 
 	def __str__(self):
-		return self.purveyor
+		return self.pk

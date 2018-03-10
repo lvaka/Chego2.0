@@ -28,7 +28,7 @@ hr {
 }
 
 body {
-	background: $main-color-light;
+	background: $main-color-white;
 }
 
 a {
@@ -38,8 +38,7 @@ a {
 }
 
 a:hover{
-	background: $highlight;
-	color: $main-color-light;
+	color: $highlight;
 	text-decoration: underline;
 }
 

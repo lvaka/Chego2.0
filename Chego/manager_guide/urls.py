@@ -8,8 +8,9 @@ from . import views
 
 urlpatterns = [
 	url(r'^manager$', views.manager_guide, name='manager'),
-	url(r'^menu_items$', views.menu_items, name='menu_items'),
-	url(r'^contacts$', views.contacts, name='contacts'),
-	url(r'^recipes$', views.recipes, name='recipes'),
-	url(r'^order_selection$', views.order_selection, name='order_selection'),
+	url(r'^manager/menu_items$', views.menu_items, name='menu_items'),
+	url(r'^manager/contacts$', views.contacts, name='contacts'),
+	url(r'^manager/recipes$', views.recipes, name='recipes'),
+	url(r'^manager/order_selection$', views.order_selection, name='order_selection'),
+	url(r'^manager/order/(?P<name>\w+)$', views.order, name='order'),
 ]

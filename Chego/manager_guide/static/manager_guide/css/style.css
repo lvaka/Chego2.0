@@ -16,7 +16,7 @@ hr {
   border-style: dashed; }
 
 body {
-  background: #BAE5FF; }
+  background: #F3FAFF; }
 
 a {
   color: #2A3D49;
@@ -24,8 +24,7 @@ a {
   transition: 0.4s; }
 
 a:hover {
-  background: #AB5588;
-  color: #BAE5FF;
+  color: #AB5588;
   text-decoration: underline; }
 
 h1 {

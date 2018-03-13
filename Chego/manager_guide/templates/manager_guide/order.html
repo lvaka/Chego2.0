@@ -3,25 +3,33 @@
 {% block content %}
 <div id="content_box">
 	<div id="menu_tag">
-		<table>
-			<tr>
-				<td><h1>{{ purveyor }}</h1></td>
-			</tr>
-			<tr>
-				<td><p>Item Name</p></td>
-				<td><p>Unit</p></td>
-				<td><p>Pars</p></td>
-				<td><p>Order Count</p></td>
-			</tr>
-			{% for order in orders %}
-			<tr>
-				<td><p>{{ order.item_name }}</p></td>
-				<td><p>{{ order.unit }}</p></td>
-				<td><p>{{ order.pars }}</p></td>
-				<td></td>
-			</tr>
-			{% endfor %}
-		</table>
+		<form role="form" method="POST">
+			{% csrf_token %}
+
+			<table id="order_table">
+				<tr>
+					<td colspan='3'><h1>{{ purveyor }}</h1></td>
+				</tr>
+				<tr>
+					<td><p><em class="embolden">Pick Your Delivery Date:</em></p></td>
+					<td colspan='2'>{{ dateform.delivery_date }}</td>
+				</tr>
+				<tr>
+					<td><p><em class="embolden">Item</em></p></td>
+					<td><p><em class="embolden">Quantity</em></p></td>
+				</tr>
+				{% for field in form %}
+				<tr>
+					<td><p>{{field.label | safe}}</p></td>
+					<td>{{field}}</td>
+				</tr>
+				{% endfor %}
+
+			</table>
+			<span class="form_control">
+				<button type="submit">Submit</button>
+			</span>
+		</form>
 	</div>
 </div>
 

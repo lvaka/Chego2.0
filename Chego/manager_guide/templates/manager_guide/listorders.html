@@ -1,0 +1,27 @@
+{% extends 'manager_guide/base2.html' %}
+
+{% block content %}
+<div id="content_box">
+	<div id="menu_tag">
+		<table id="order_table">
+			<tr>
+				<td>
+					<h1>Order History</h1>
+				</td>
+			</tr>
+			{% for item in  orders%}
+			<tr>
+				<td>
+					<a href="{% url 'confirmorder' pk=item.pk %}">
+					<p>{{ item }}</p>
+					</a>
+				</td>
+			</tr> 
+			{% endfor %}
+		</table>
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}

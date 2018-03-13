@@ -7,10 +7,41 @@ $main-color-white: #F3FAFF;
 $highlight: #AB5588;
 $main-font: 'Source Sans Pro', sans-serif;
 
-html, body, header, h1, h2, h3, h4, p, a, div, ul, li, table, td, tr{
+html, body, header, h1, h2, h3, h4, p, a, div, ul, li{
 	margin: 0;
 	padding: 0;
 	display: block;
+}
+
+span {
+	display: block;
+	margin: 0 auto;
+
+	p, a{
+		display: inline-block;
+	}
+}
+
+select {
+	font-family: $main-font;
+	font-size: 1rem;
+	padding: 0.1rem;
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+    padding: 2px 4px;
+    margin: 0.2rem 0.3rem;
+    font-size: 0.9rem
+}
+
+table {
+	display: table;
 }
 
 table td { 
@@ -127,7 +158,6 @@ h1 {
 		margin-bottom: 5vh;
 		text-align: left;
 		align-self: flex-start;
-		justify-self: flex-start;
 
 		em{
 			font-weight: 600;
@@ -159,4 +189,38 @@ h1 {
 	h2 {
 		margin: 2rem 0 0 0;
 	}
+}
+
+#order_table {
+	margin: 2rem auto;
+	display: table;
+	border-spacing: 0;
+	border-collapse: collapse;
+	width: 100%;
+	max-width: 40rem;
+
+	tr{
+		margin: 0;
+	}
+
+	td{
+		border: 1px solid $main-color-dark;
+		padding: 0.5rem;
+		margin: 0;
+	}	
+	
+	p {
+		margin: 0;
+
+	}
+}
+
+span.form_control{
+	width: 100%;
+	max-width: 40rem;
+}
+
+.embolden {
+	font-style: normal;
+	font-weight: bold;
 }

@@ -1,0 +1,40 @@
+{% extends 'manager_guide/base2.html' %}
+
+{% block content %}
+<div id="content_box">
+	<div id="menu_tag">
+		<table id="order_table">
+			<tr>
+				<td>
+					<h1>{{ order.purveyor }}</h1>
+					<p>Confirm Your Order</p>
+				</td>
+			</tr>
+			<tr>
+				<td><p><em class="embolden">Delivery Date:</em>
+				{{ order.delivery_date }}</p></td>
+			</tr>
+			{% for item in ordereditems %}
+			<tr>
+				<td><p>{{ item.quantity }} x ({{item.unit}}){{ item.item_name }} </p></td>
+			</tr> 
+			{% endfor %}
+		</table>
+		{% if order.email_sent %}
+		<span class="form_control">
+			<p>Order has already been submitted</p>
+		</span>
+		{% else %}
+		<span class="form_control">
+			<p>
+				<a href="" class="button">Submit Order</a>
+				<a href="{% url 'deleteorder' pk=order.pk %}" class="button">Remove Order</a> 
+			 <a href="{% url 'editorder' pk=order.pk %}" class="button">Edit</a></p>
+		</span>
+		{% endif %}
+		
+
+	</div>
+</div>
+
+{% endblock %}

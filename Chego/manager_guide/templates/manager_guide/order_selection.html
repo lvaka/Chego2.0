@@ -3,6 +3,7 @@
 {% block content %}
 <div id="content_box">
 	<div id="menu_tag">
+		<h3><a href="{% url 'listorders' %}">Order History</a></h3>
 		{% for purveyor in purveyors %}
 		<div class="order_box">
 			<h1><a href="{% url 'manager' %}/order/{{ purveyor.name }}">{{ purveyor.name }}</a></h1>

@@ -1,0 +1,34 @@
+{% extends 'manager_guide/base2.html' %}
+
+{% block content %}
+<div id="content_box">
+	<div id="menu_tag">
+		<form role="form" method="POST">
+		{% csrf_token %}
+		<table id="order_table">
+			<tr>
+				<td colspan="2">
+					<h1>{{ order.purveyor }}</h1>
+					<p>Edit Your Order</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><p><em class="embolden">Selected Delivery Date:</em>{{ form.delivery_date }}</p></td>
+			</tr>
+			{% for item in formitems %}
+			<tr>
+			    <td><p>{{ item.label }}</p></td>
+			    <td><p>{{ item }}</p></td>
+			</tr> 
+			{% endfor %}
+		</table>
+		<span class="form_control">
+			<button type="submit">Save</button>
+			<p><a href="{% url 'deleteorder' pk=order.pk %}" class="button">Remove Order</a></p></span>
+		</form>
+		
+
+	</div>
+</div>
+
+{% endblock %}

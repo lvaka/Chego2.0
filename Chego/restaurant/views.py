@@ -51,7 +51,6 @@ def restaurant(request):
 			return redirect('main')
 
 		else:
-			print("form invalid")
 			return redirect('error')
 
 	return render(request, 'restaurant.html', {'form': Cateringform})

@@ -48,15 +48,29 @@ class OrderList(models.Model):
 	
 
 	def __str__(self):
-		return self.item_name
+		label = str(self.item_name) + ' (' + str(self.unit) + ') &nbsp;&nbsp; par(' + str(self.pars) + ')'
+		return label
 
 class Order(models.Model):
 	purveyor = models.CharField(choices=name_choices, max_length=100)
 	order_date = models.DateField(auto_now=True)
-	delivery_date = models.CharField(choices=get_date_choices(7),max_length=100)
-	complete_order = models.TextField()
+	delivery_date = models.CharField(choices=get_date_choices(7), max_length=100)
 	email_sent = models.BooleanField(default=False)
+
+	def SendEmail(self):
+		self.email_sent=True
+		self.save()
 
 
 	def __str__(self):
-		return self.pk
+		ordernumber = self.purveyor + " " + str(self.order_date) + '.' + str(self.pk)
+		return ordernumber
+
+class OrderedItem(models.Model):
+	order = models.ForeignKey('Order', on_delete=models.CASCADE,)
+	item_name = models.CharField(max_length=100)
+	unit = models.CharField(max_length=20)
+	quantity = models.PositiveSmallIntegerField()
+
+	def __str__(self):
+		return self.item_name

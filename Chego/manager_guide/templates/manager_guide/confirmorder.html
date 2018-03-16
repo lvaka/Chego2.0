@@ -27,7 +27,7 @@
 		{% else %}
 		<span class="form_control">
 			<p>
-				<a href="" class="button">Submit Order</a>
+				<a href="{% url 'submitorder' pk=order.pk %}" class="button">Submit Order</a>
 				<a href="{% url 'deleteorder' pk=order.pk %}" class="button">Remove Order</a> 
 			 <a href="{% url 'editorder' pk=order.pk %}" class="button">Edit</a></p>
 		</span>

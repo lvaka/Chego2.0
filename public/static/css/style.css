@@ -15,10 +15,6 @@ a {
 body {
   background: #1e1e1e; }
 
-style {
-  margin: 1rem 0 0 1rem;
-  border: 1px solid black; }
-
 #header {
   position: fixed;
   background: #ff9713;
@@ -93,7 +89,7 @@ style {
   margin-top: 4rem;
   width: 100%;
   height: 96vh;
-  background: url("/static/media/bowls/01.jpg") no-repeat;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url("/static/media/bowls/01.jpg") no-repeat;
   background-size: auto;
   background-position: center; }
   #welcome-container #welcome {
@@ -114,6 +110,10 @@ style {
       font-size: 2.5rem;
       line-height: 4.5rem;
       text-shadow: 0.5rem 0.5rem 2rem #1e1e1e; }
+    #welcome-container #welcome #time {
+      margin-top: 4rem;
+      font-size: 1.8rem;
+      line-height: 2rem; }
 
 #foodMenu-container {
   width: 100%;
@@ -231,10 +231,16 @@ style {
       color: #fafafa; }
     #form-modal #inner-modal td {
       vertical-align: top; }
+    #form-modal #inner-modal select {
+      margin: 0.5rem;
+      height: 1.5rem;
+      font-family: "Oswald", sans-serif; }
     #form-modal #inner-modal input {
-      margin: 0.5rem; }
+      margin: 0.5rem;
+      font-family: "Oswald", sans-serif; }
     #form-modal #inner-modal textarea {
-      margin: 0.5rem; }
+      margin: 0.5rem;
+      font-family: "Oswald", sans-serif; }
     #form-modal #inner-modal #closeForm {
       float: right;
       position: relative;

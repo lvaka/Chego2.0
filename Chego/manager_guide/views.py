@@ -4,6 +4,9 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 from django.shortcuts import redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.template import Context, Template
+from django.template.loader import get_template
+from django.core.mail import EmailMessage
 from manager_guide.models import *
 from manager_guide.forms import *
 
@@ -147,9 +150,46 @@ def listorders(request):
 def submitorder(request, pk):
 
 	order = get_object_or_404(Order, pk=pk)
-	ordereditems = ordereditems = OrderedItem.objects.filter(order=pk, quantity__gt = 0)
+	ordereditems = OrderedItem.objects.filter(order=pk, quantity__gt = 0)
+	purveyor = get_object_or_404(Purveyor, name=order.purveyor)
 
+	purveyor_name = order.purveyor
+	delivery_date = order.delivery_date
+	complete_order = ""
+
+	for item in ordereditems:
+		complete_order += str(item.quantity) + ' x (' + item.unit + ') '
+		complete_order += item.item_name + '\n'
+                
+                
+	# Email the order
+	template = get_template('manager_guide/order_template.txt')
+	context = {
+		'purveyor_name': purveyor_name,
+		'delivery_date': delivery_date,
+		'complete_order': complete_order,
+		}
+
+	content = template.render(context)
+
+
+    #Title, Message, Sending Email, [Receiving Emails,]
+    #replace sending email as user.email and receiving email
+    #as purveyor e-mail            
+	email = EmailMessage("Chego New Order For " + delivery_date,
+		content,
+		'manager@kogibbq.com',
+		['eric@kogibbq.com'],
+		reply_to=['manager@kogibbq.com'],
+		)
+
+	email.send()
 	#Simply Activates Bool that E-Mail has been sent.  No actual logic
 	order.SendEmail()
 
-	return redirect('listorders')
+	return redirect('order_confirmation')
+
+@login_required
+def order_confirmation(request):
+
+	return render(request, 'manager_guide/orderconfirmation.html')

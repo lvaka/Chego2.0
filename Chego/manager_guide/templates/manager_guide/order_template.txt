@@ -1,0 +1,6 @@
+This is an order for Chego for {{ delivery_date }}
+
+We will need
+{{ complete_order }}
+
+Thank You and Have a Great Day

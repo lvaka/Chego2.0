@@ -17,4 +17,6 @@ urlpatterns = [
 	url(r'^manager/editorder/(?P<pk>\d+)$', views.editorder, name='editorder'),
 	url(r'^manager/confirmorder/(?P<pk>\d+)$', views.confirmorder, name='confirmorder'),
 	url(r'^manager/removeorder/(?P<pk>\d+)$', views.deleteorder, name='deleteorder'),
+	url(r'^manager/submitorder/(?P<pk>\d+)$', views.submitorder, name='submitorder'),
+	url(r'^manager/order_confirmation$', views.order_confirmation, name='order_confirmation'),
 ]

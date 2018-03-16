@@ -8,8 +8,8 @@
 			{% for snack in snacks %}
 			<div class="menu_items">
 				<h2>{{ snack.name }}</h2>
-				<p><em>Components:</em> {{ snack.components }}</p>
-				<p><em>Assembly:</em> {{ snack.assembly }}</p>
+				<p><em>Components:</em> {{ snack.components|linebreaksbr }}</p>
+				<p><em>Assembly:</em> {{ snack.assembly|linebreaksbr }}</p>
 			</div>
 			{% endfor %}
 			<center><hr /></center>
@@ -17,8 +17,8 @@
 			{% for grill in grills %}
 			<div class="menu_items">
 				<h2>{{ grill.name }}</h2>
-				<p><em>Components:</em> {{ grill.components }}</p>
-				<p><em>Assembly:</em> {{ grill.assembly }}</p>
+				<p><em>Components:</em> {{ grill.components|linebreaksbr }}</p>
+				<p><em>Assembly:</em> {{ grill.assembly|linebreaksbr }}</p>
 			</div>
 			{% endfor %}
 			<center><hr /></center>
@@ -26,8 +26,8 @@
 			{% for wok in woks %}
 			<div class="menu_items">
 				<h2>{{ wok.name }}</h2>
-				<p><em>Components:</em> {{ wok.components }}</p>
-				<p><em>Assembly:</em> {{ wok.assembly }}</p>
+				<p><em>Components:</em> {{ wok.components|linebreaksbr }}</p>
+				<p><em>Assembly:</em> {{ wok.assembly|linebreaksbr }}</p>
 			</div>
 			{% endfor %}
 			<center><hr /></center>
@@ -35,8 +35,8 @@
 			{% for sweet in sweets %}
 			<div class="menu_items">
 				<h2>{{ sweet.name }}</h2>
-				<p><em>Components:</em> {{ sweet.components }}</p>
-				<p><em>Assembly:</em> {{ sweet.assembly }}</p>
+				<p><em>Components:</em> {{ sweet.components|linebreaksbr }}</p>
+				<p><em>Assembly:</em> {{ sweet.assembly|linebreaksbr }}</p>
 			</div>
 			{% endfor %}
 		</div>

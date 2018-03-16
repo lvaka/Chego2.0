@@ -176,14 +176,15 @@ h1 {
 				color: $main-color;
 			}
 		}
+	}
 
-		#success_tag{
+
+	#success_tag{
 			width: 60%;
-			height: 20em;
-			text-align: left;
+			text-align: center;
 			align-self: center;
+			z-index: 3;
 			margin: auto 0;
-		}
 	}
 
 	h1, h2,h3, p{
@@ -231,4 +232,108 @@ span.form_control{
 .embolden {
 	font-style: normal;
 	font-weight: bold;
+}
+
+//Media Queries
+@media only screen and (max-device-width: 768px) 
+and (min-device-width: 601px)
+{
+
+	h3{
+		font-size: 2rem;
+	}
+
+	h2{
+		font-size: 2.5rem;
+	}
+
+	h1{
+		font-size: 3rem;
+	}
+
+	p{
+		font-size: 1.5rem;
+		margin: 0.5rem 0;
+		line-height: 1.5rem;
+	}
+
+	#navigation{
+		position: absolute;
+		height: 5rem;
+
+		ul{
+			margin-top: 1.6rem;
+		}
+
+		li{
+			a{
+				font-size: 1.8rem;
+			}
+		}
+	}	
+
+	#content_box{
+  		#menu_tag{
+  			width: 90%;
+
+  			em{
+  				font-size: 1.5rem;
+  			}
+  		}
+
+  		#success_tag{
+			width: 90%;
+		}
+	}
+
+}
+
+@media only screen and (max-device-width: 600px){
+
+	h3{
+		font-size: 2rem;
+	}
+
+	h2{
+		font-size: 2.5rem;
+	}
+
+	h1{
+		font-size: 3rem;
+	}
+
+	p{
+		font-size: 1.5rem;
+		margin: 0.5rem 0;
+		line-height: 1.5rem;
+	}
+
+	#navigation{
+		position: absolute;
+		height: 6rem;
+
+		ul{
+			margin-top: 2rem;
+		}
+		li{
+			a{
+				font-size: 1.8rem;
+			}
+		}
+	}	
+
+	#content_box{
+  		#menu_tag{
+  			width: 98%;
+
+  			em{
+  				font-size: 1.5rem;
+  			}
+  		}
+
+  		#success_tag{
+			width: 98%;
+		}
+	}
+
 }

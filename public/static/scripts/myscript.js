@@ -23,13 +23,13 @@ function openClose(){
   if (isHoliday() == false){
     if (dateToday.getDay() == 0 && dateToday.getHours() < 20 && dateToday.getHours() >= 10){
       return "We Are Open Until 9PM";
-    } else if (dateToday.getDay() > 0 && dateToday.getHours() < 21 && dateToday.getHours() >= 10){
-      return "We Are Open Until 10PM";
+    } else if (dateToday.getDay() > 0 && dateToday.getHours() < 20 && dateToday.getHours() >= 10){
+      return "We Are Open Until 9PM";
     } else {
-      return "We Are Closed.  <br />Our Hours are Tues-Saturday 11am-10pm and Sunday 11am -9pm.";
+      return "We Are Closed.  <br />Our Hours are Tues-Saturday 11am-9pm and Sunday 11am -9pm.";
     }
   } else {
-    return "We Are Closed. <br />Our Hours are Tues-Saturday 11am-10pm and Sunday 11am -9pm."
+    return "We Are Closed. <br />Our Hours are Tues-Saturday 11am-9pm and Sunday 11am -9pm."
   }
   }
 

@@ -26,7 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG')
 
-ALLOWED_HOSTS = ['127.0.0.1', 'chego.lvakadesigns.com', 'lvakadesigns.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'chego.lvakadesigns.com', 'lvakadesigns.com', 'www.chego.lvakadesigns.com']
 
 
 # Application definition

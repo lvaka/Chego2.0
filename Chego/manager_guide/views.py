@@ -179,7 +179,7 @@ def submitorder(request, pk):
 	email = EmailMessage("Chego New Order For " + delivery_date,
 		content,
 		'manager@kogibbq.com',
-		['eric@kogibbq.com'],
+		['mpstudiosEJShin@gmail.com'],
 		reply_to=['manager@kogibbq.com'],
 		)
 

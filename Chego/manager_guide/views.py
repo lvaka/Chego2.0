@@ -60,21 +60,20 @@ def order(request, name):
 	if request.method == 'POST':
 		form = OrderCreationForm(item=orders, data=request.POST)
 
-		print(form.data)
-
 		if form.is_valid():
 			deliverydate = form.data['delivery_date']
 
 
 			neworder = Order(purveyor=name, delivery_date=deliverydate)
+			print (form)
 			neworder.save()
 
 			for i, item in enumerate(orders):
-
+									
 				orderentry = OrderedItem(order=neworder, 
 										item_name=item.item_name, 
-										unit=item.unit, 
-										quantity=form.data['item_%s' % i]
+										unit=item.unit,
+										quantity=int('0' + str(form.data['item_%s' % i]))
 										)
 				orderentry.save()
 

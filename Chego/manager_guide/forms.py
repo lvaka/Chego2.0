@@ -10,7 +10,7 @@ class OrderCreationForm(forms.Form):
 
         for i, value in enumerate(item):
 
-            self.fields['item_%s' % i] = forms.IntegerField(label=value, min_value=0, max_value=999, required=False)
+            self.fields['item_%s' % i] = forms.IntegerField(label=value, initial=None, min_value=0, max_value=999, required=False)
 
 
 class DateForm(forms.Form):

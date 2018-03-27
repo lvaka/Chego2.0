@@ -69,11 +69,16 @@ def order(request, name):
 			neworder.save()
 
 			for i, item in enumerate(orders):
+				if form.data['item_%s' % i] == '':
+					iquantity = None;
+				else:
+					iquantity = form.data['item_%s' % i]
 									
 				orderentry = OrderedItem(order=neworder, 
 										item_name=item.item_name, 
 										unit=item.unit,
-										quantity=int('0' + str(form.data['item_%s' % i]))
+										quantity=iquantity
+										#quantity=int('0' + str(form.data['item_%s' % i]))
 										)
 				orderentry.save()
 
